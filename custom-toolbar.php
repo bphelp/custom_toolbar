@@ -72,8 +72,7 @@ function custom_toolbar($wp_toolbar) {
 	$wp_toolbar->remove_node('edit');
 	
 	$wp_toolbar->remove_node('bp-notifications');
-
-/* Code for the split out notifications, currently only links to the pages and dropdown menus doesn't show the notifications */	
+	
 	if ( is_user_logged_in() ) {
 	
 	$wp_toolbar->add_node(array(
@@ -83,13 +82,13 @@ function custom_toolbar($wp_toolbar) {
 	/*'meta' => array('class' => 'notifications')*/
 	));
 	
-	$wp_toolbar->add_node(array(
+	/*$wp_toolbar->add_node(array(
 	'parent' => 'bp-notifications',
-	'id' => ' notices',
-	'title' => Notices,
+	'id' => ' Notices',
+	'title' => $notifications,
 	'href'  => bp_loggedin_user_domain() .  bp_get_messages_slug() . '/notices/',
 	'meta' => 'echo count($notifications);'
-	));
+	));*/
 	
 	$wp_toolbar->add_node(array(
 	'id' => 'user-friends',
@@ -103,7 +102,7 @@ function custom_toolbar($wp_toolbar) {
 	'id' => 'friend-requests',
 	'title' => ' Friend Requests ',
 	'href'  => bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/',
-	'meta' => 'echo bp_friend_get_total_requests_count( $user_id );'
+	'meta' => array('html' => '<span style="margin-left:50px; color: #4e75c1;">' . bp_friend_get_total_requests_count( bp_loggedin_user_id() ) . '</span>' )
 	));
 	
 	$wp_toolbar->add_node(array(
@@ -118,7 +117,7 @@ function custom_toolbar($wp_toolbar) {
 	'id' => 'messages',
 	'title' => ' Messages ',
 	'href'  => bp_loggedin_user_domain() .  bp_get_messages_slug() . '/view/',
-	'meta' => 'echo bp_get_total_unread_messages_count($name );'
+	'meta' => array('html' =>'<span style="margin-left:35px; color: #4e75c1;">' . bp_get_total_unread_messages_count( bp_loggedin_user_id() . '</span>' ) )
 	));
 	
 	}
