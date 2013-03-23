@@ -82,14 +82,6 @@ function custom_toolbar($wp_toolbar) {
 	/*'meta' => array('class' => 'notifications')*/
 	));
 	
-	/*$wp_toolbar->add_node(array(
-	'parent' => 'bp-notifications',
-	'id' => ' Notices',
-	'title' => $notifications,
-	'href'  => bp_loggedin_user_domain() .  bp_get_messages_slug() . '/notices/',
-	'meta' => 'echo count($notifications);'
-	));*/
-	
 	$wp_toolbar->add_node(array(
 	'id' => 'user-friends',
 	'title' => __('<img src="' . plugins_url( '_inc/images/friends.png' , __FILE__ ) . '" style="margin-top: 5px;"> '),
