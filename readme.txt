@@ -30,7 +30,7 @@ To Do:
 1.) Add name of person sending friend request and messages beside the count as well as the greeting.
 Example: You have 1 friend request from USER1, You have 2 messages from USER2
 
-2.) Add avatar of person sending the friend request or message to to left of the notification.
+2.) Add avatar of person sending the friend request or message to to left in the drop-down notification.
 
 == Changelog == 
 = 1.0 =
