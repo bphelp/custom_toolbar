@@ -2,7 +2,7 @@
 /*
 Plugin Name: Custom Toolbar
 Plugin URI: http://www.my-dev.com/
-Description: A custom toolbar.
+Description: Modifies the WordPress 3.3+ toolbar.
 Version: 1.0
 Author: Ben Jones
 Author URI: http://www.my-dev.com/
@@ -82,6 +82,14 @@ function custom_toolbar($wp_toolbar) {
 	/*'meta' => array('class' => 'notifications')*/
 	));
 	
+	/*$wp_toolbar->add_node(array(
+	'parent' => 'bp-notifications',
+	'id' => ' Notices',
+	'title' => $notifications,
+	'href'  => bp_loggedin_user_domain() .  bp_get_messages_slug() . '/notices/',
+	'meta' => 'echo count($notifications);'
+	));*/
+	
 	$wp_toolbar->add_node(array(
 	'id' => 'user-friends',
 	'title' => __('<img src="' . plugins_url( '_inc/images/friends.png' , __FILE__ ) . '" style="margin-top: 5px;"> '),
@@ -92,9 +100,9 @@ function custom_toolbar($wp_toolbar) {
 	$wp_toolbar->add_node(array(
 	'parent' => 'user-friends',
 	'id' => 'friend-requests',
-	'title' => ' Friend Requests ',
+	'title' => 'Friend Requests',
 	'href'  => bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/',
-	'meta' => array('html' => '<span style="margin-left:50px; color: #4e75c1;">' . bp_friend_get_total_requests_count( bp_loggedin_user_id() ) . '</span>' )
+	'meta' => array('html' => '<span style="margin-left:50px; background: none repeat scroll 0 0 #21759B; border-radius: 10px 10px 10px 10px; color: #FFFFFF; display: inline; font-size: 10px; font-weight: bold; padding: 2px 5px; text-shadow: none;">' . bp_friend_get_total_requests_count( bp_loggedin_user_id() ) . '</span>' )
 	));
 	
 	$wp_toolbar->add_node(array(
@@ -109,7 +117,7 @@ function custom_toolbar($wp_toolbar) {
 	'id' => 'messages',
 	'title' => ' Messages ',
 	'href'  => bp_loggedin_user_domain() .  bp_get_messages_slug() . '/view/',
-	'meta' => array('html' =>'<span style="margin-left:35px; color: #4e75c1;">' . bp_get_total_unread_messages_count( bp_loggedin_user_id() . '</span>' ) )
+	'meta' => array('html' =>'<span style="margin-left:35px; background: none repeat scroll 0 0 #21759B; border-radius: 10px 10px 10px 10px; color: #FFFFFF; display: inline; font-size: 10px; font-weight: bold; padding: 2px 5px; text-shadow: none;color: #FFFFFF; display: inline; background: none repeat scroll 0 0 #21759B; border-radius: 10px 10px 10px 10px; font-weight: bold; padding: 2px 5px; text-shadow: none;">' . bp_get_total_unread_messages_count( bp_loggedin_user_id() . '</span>' ) )
 	));
 	
 	}
