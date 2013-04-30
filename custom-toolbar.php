@@ -3,7 +3,7 @@
 Plugin Name: Custom Toolbar
 Plugin URI: http://www.my-dev.com/
 Description: Modifies the WordPress 3.3+ toolbar.
-Version: 1.0
+Version: 1.1
 Author: Ben Jones
 Author URI: http://www.my-dev.com/
 License: GPL2
